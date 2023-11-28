@@ -105,7 +105,7 @@ var Verdict_value = flow.Verdict_value
 type DropReason = flow.DropReason
 
 const DropReason_DROP_REASON_UNKNOWN = flow.DropReason_DROP_REASON_UNKNOWN
-const DropReason_INVALID_SOURCE_MAC = flow.DropReason_INVALID_SOURCE_MAC
+const DropReason_HOST_NOT_READY = flow.DropReason_HOST_NOT_READY
 const DropReason_INVALID_DESTINATION_MAC = flow.DropReason_INVALID_DESTINATION_MAC
 const DropReason_INVALID_SOURCE_IP = flow.DropReason_INVALID_SOURCE_IP
 const DropReason_POLICY_DENIED = flow.DropReason_POLICY_DENIED

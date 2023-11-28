@@ -934,7 +934,7 @@ here.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | DROP_REASON_UNKNOWN | 0 | non-drop reasons |
-| INVALID_SOURCE_MAC | 130 | drop reasons |
+| HOST_NOT_READY | 130 | drop reasons |
 | INVALID_DESTINATION_MAC | 131 |  |
 | INVALID_SOURCE_IP | 132 |  |
 | POLICY_DENIED | 133 |  |
