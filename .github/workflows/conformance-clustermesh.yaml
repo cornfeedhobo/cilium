@@ -59,7 +59,7 @@ env:
   kind_version: v0.20.0
   # renovate: datasource=docker depName=quay.io/cilium/kindest-node
   k8s_version: v1.29.0-rc.1
-  cilium_cli_ci_version:
+  cilium_cli_ci_version: 70fe17893bd6026e54119da7912ee7225c429429
   CILIUM_CLI_MODE: helm
   clusterName1: cluster1-${{ github.run_id }}
   clusterName2: cluster2-${{ github.run_id }}
@@ -208,7 +208,7 @@ jobs:
         id: default_vars
         uses: ./.github/actions/helm-default
         with:
-          image-tag: ${{ inputs.SHA }}
+          image-tag: 446cf565f6b059196ce7661d8bb91421d8a3cc02
 
       - name: Set up job variables for GHA environment
         id: vars
@@ -485,16 +485,3 @@ jobs:
         uses: aanm/junit2md@332ebf0fddd34e91b03a832cfafaa826306558f9 # v0.0.3
         with:
           junit-directory: "cilium-junits"
-
-
-  commit-status-final:
-    if: ${{ always() && github.event_name != 'push' }}
-    name: Commit Status Final
-    needs: installation-and-connectivity
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set final commit status
-        uses: myrotvorets/set-commit-status-action@38f3f27c7d52fb381273e95542f07f0fba301307 # v2.0.0
-        with:
-          sha: ${{ inputs.SHA || github.sha }}
-          status: ${{ needs.installation-and-connectivity.result }}
